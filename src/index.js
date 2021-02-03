@@ -1,10 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import Products from './Products';
+import ShoppingCart from './ShoppingCart';
+import store from './redux/store';
+import {Provider} from 'react-redux';
+
+console.log(store.getState());
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <Provider store={store}>
+    <div style={{display: 'flex'}}>
+    <Products />
+    <ShoppingCart />
+  </div>
+  </Provider>  
+  ,document.getElementById('root')
 );
